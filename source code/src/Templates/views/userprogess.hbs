@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="../partials/img-etc/logo.jpg" type="image/x-icon" />
+    <title>Home</title>
+  </head>
+  <body >
+    {{>navbar}}
+
+    <div class="flex justify-center h-screen items-center flex-col">
+
+    
+    {{!-- {{>navbar}} --}}
+    <h3
+      class="font-medium leading-tight text-3xl mt-0 mb-2 text-blue-600 text-center"
+    >
+      Your Application Status
+    </h3>
+    <h4>Pending...</h4>
+    </div>
+    <div class="text-center">
+      
+      <a href="./index" class="px-3 py-2 my-4 inline-block rounded text-md font-light text-white bg-red-500 hover:bg-red-700">Log out</a>
+
+    </div>
+    {{>footer}}
+
+    {{!-- {{>footer}} --}}
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="./img-etc/logo.jpg" type="image/x-icon" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login</title>
+  </head>
+  <body>
+    <!-- Navbar goes here -->
+
+    <form action="/adminlogin" method="post">
+    <nav
+      class="admin-nav text-center p-3 text-white font-semibold bg-[#185490]"
+    >
+      Admin
+    </nav>
+
+    <div
+      class="container h-4/5 mx-auto flex flex-col items-center justify-center"
+    >
+      <div class="bg-white rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+        <p class="text-center text-2xl my-5 font-bold">Admin Login</p>
+        <div class="mb-4">
+          <label
+            class="block text-grey-darker text-sm font-bold mb-2"
+            for="username"
+          >
+            Username
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+            id="username"
+            type="text"
+            placeholder="Mobile no." name="adminusername"
+          />
+        </div>
+        <div class="mb-6">
+          <label
+            class="block text-grey-darker text-sm font-bold mb-2"
+            for="password"
+          >
+            Password
+          </label>
+          <input
+            class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+            id="password"
+            type="password"
+            placeholder="Password" name="adminpassword"
+          />
+        </div>
+        <div class="flex items-center justify-between">
+          <button
+            class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            type="submit"
+          >
+            Sign In
+          </button>
+          <a
+            class="inline-block align-baseline text-sm text-blue-600 hover:text-blue-800"
+            href="#"
+          >
+            Forgot Password?
+          </a>
+        </div>
+      </div>
+    </div>
+    </form>
+
+    <!-- footer -->
+  </body>
+</html>
