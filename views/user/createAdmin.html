@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="./img-etc/logo.jpg" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @media (max-width: 1024px) {
+        .text-resp {
+          width: 100%;
+        }
+      }
+    </style>
+    <title>Form</title>
+  </head>
+  <body style="overflow-x: hidden">
+    <section class="sm:py-1">
+      <div
+        class="flex flex-col text-white items-center justify-center px-6 py-8 mx-auto"
+      >
+        <div
+          class="w-full bg-[#185490] rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0"
+        >
+          <p class="text-center text-2xl my-10 font-bold">
+            Annapurna Yojna Admins
+          </p>
+          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <form
+              class="space-y-4 md:space-y-6 text-white"
+              onsubmit="return validateForm()"
+              action=""
+            >
+              <div>
+                <label for="adminName" class="block mb-2 text-sm font-medium"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  name=""
+                  id="adminName"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Name"
+                  required=""
+                />
+                <p
+                  class="text-center ml-auto text-red-600"
+                  id="adminNameErr"
+                ></p>
+              </div>
+              <div>
+                <label for="adminRole" class="block mb-2 text-sm font-medium"
+                  >Role</label
+                >
+                <select name="" id="" class="text-black p-2 w-full">
+                  <option value="subAdmin">Sub Admin</option>
+                  <option value="mainAdmin">Main Admin</option>
+                </select>
+              </div>
+              <div>
+                <label for="email" class="block mb-2 text-sm font-medium"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Email ID"
+                  required=""
+                />
+              </div>
+              <div>
+                <label for="mobile" class="block mb-2 text-sm font-medium"
+                  >Mobile No.</label
+                >
+                <input
+                  type="text"
+                  name="mobile"
+                  id="phoneNum"
+                  maxlength="10"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Mobile No."
+                  required=""
+                />
+                <p class="text-center ml-auto text-red-600" id="phoneErr"></p>
+              </div>
+              <div>
+                <label for="password" class="block mb-2 text-sm font-medium"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="••••••••"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  required=""
+                />
+              </div>
+              <div>
+                <label
+                  for="confirm-password"
+                  class="block mb-2 text-sm font-medium"
+                  >Confirm password</label
+                >
+                <input
+                  type="password"
+                  name="confirm-password"
+                  id="confirmPassword"
+                  placeholder="••••••••"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  required=""
+                />
+                <p
+                  class="text-center ml-auto text-red-600"
+                  id="confirmPasswordErr"
+                ></p>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full text-white bg-green-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              >
+                Create
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function showErrMsg(errEle, msg) {
+        errEle.textContent = msg;
+      }
+
+      function validateAdminName(name) {
+        const errEle = document.getElementById("adminNameErr");
+        if (!isNaN(name) || name.value == "") {
+          showErrMsg(errEle, "invalid name");
+          return false;
+        } else {
+          showErrMsg(errEle, "");
+          return true;
+        }
+      }
+
+      function validatePhoneNumber(phoneNumber) {
+        const errEle = document.getElementById("phoneErr");
+        if (
+          phoneNumber === "" ||
+          phoneNumber.length != 10 ||
+          isNaN(phoneNumber)
+        ) {
+          showErrMsg(errEle, "Enter valid phone number");
+          return false;
+        } else {
+          showErrMsg(errEle, "");
+          return true;
+        }
+      }
+
+      function comparePassword(password, confirmPassword) {
+        const errEle = document.getElementById("confirmPasswordErr");
+        if (password !== confirmPassword) {
+          showErrMsg(errEle, "Passwords are not same");
+          return false;
+        } else {
+          showErrMsg(errEle, "");
+          return true;
+        }
+      }
+
+      function validateForm() {
+        // inputvalues
+        const adminName = document.getElementById("adminName");
+        const phoneNumber = document.getElementById("phoneNum").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
+
+        // variables
+        const isAdminNameValid = validateAdminName(adminName);
+        const isPhoneNoValid = validatePhoneNumber(phoneNumber);
+        const isPasswordsAreSame = comparePassword(password, confirmPassword);
+
+        if (isAdminNameValid && isPhoneNoValid && isPasswordsAreSame) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

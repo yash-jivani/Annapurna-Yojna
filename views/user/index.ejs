@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="./img-etc/logo.jpg" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .landing-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); 
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity:1;
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  text-align: center;
+}
+
+.hidden-admin{
+  display: none !important;
+}
+    </style>
+
+    <title>Home</title>
+  </head>
+  <body style="overflow-x: hidden">
+
+    <!-- Navbar -->
+    <div class="bg-[#185490]">
+      <nav
+        class=" border-gray-200 px-2 sm:px-4 bg-[#185490] py-2.5 max-w-6xl mx-auto"
+      >
+        <div
+          class="container flex flex-wrap items-center justify-between mx-auto"
+        >
+        <a href="index" class="flex items-center mb-4 sm:mb-0">
+          <img
+            src="../img-etc/logo.jpg"
+            class="mr-3 h-16"
+            alt="અન્નપૂર્ણા યોજના Logo"
+          />
+          <span
+            class="self-center text-xl sm:text-2xl font-semibold whitespace-nowrap dark:text-white "
+            >અન્નપૂર્ણા યોજના</span
+          >
+        </a>
+          <button
+            data-collapse-toggle="navbar-default"
+            type="button"
+            class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-default"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul
+              class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-blue"
+            >
+              <li>
+                <a
+                  href="index"
+                  class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent  md:p-0"
+                  aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#main-sec"
+                  class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent  md:p-0"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent  md:p-0"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <main class="">
+      <div class="img-box relative">
+        <img
+          src="../img-etc/facility.jpg"
+          class="h-full w-full landing-img"
+          alt=""
+        />
+        <h1 class="landing-title overlay">અન્નપૂર્ણા યોજના</h1>
+      </div>
+      <div class="info p-2 max-w-6xl mx-auto" id="main-sec">
+        <p class="mt-4">
+          &rarr; આ યોજના ગ્રામીણ વિકાસ મંત્રાલય દ્વારા 2000-2001માં શરૂ કરવામાં
+          આવી હતી. 65 વર્ષ કે તેથી વધુ વયના ગરીબ વરિષ્ઠ નાગરિકો કે જેઓ રાષ્ટ્રીય
+          વૃદ્ધાવસ્થા પેન્શન યોજના (NOAPS) હેઠળ વૃદ્ધાવસ્થા પેન્શન મેળવવા માટે
+          હકદાર છે, પરંતુ તેઓને આ પેન્શન મળતું નથી, તેઓને આ યોજના હેઠળ સમાવિષ્ટ
+          કરવામાં આવે છે. અને તેમને મફતમાં 10 કિલો ભોજન પૂરું પાડવામાં આવે છે. આ
+          યોજના હેઠળ દર મહિને વ્યક્તિ દીઠ અનાજ.
+        </p>
+        <p class="mt-4">
+          &rarr; વર્ષ 2002-2003 થી, આ રાજ્ય યોજનાને રાષ્ટ્રીય સામાજિક સહાયતા
+          કાર્યક્રમ સાથે રાજ્ય યોજનામાં સ્થાનાંતરિત કરવામાં આવી છે જેમાં
+          રાષ્ટ્રીય વૃદ્ધાવસ્થા પેન્શન યોજના અને રાષ્ટ્રીય કુટુંબ લાભ યોજનાનો
+          સમાવેશ થાય છે. આ સ્થાનાંતરિત યોજના માટેના ભંડોળને નાણા મંત્રાલય દ્વારા
+          વધારાની કેન્દ્રીય સહાય (ACA) તરીકે રાજ્ય યોજનામાં રજૂ કરવામાં આવે છે
+          અને રાજ્યો પાસે લાભાર્થીઓની પસંદગી કરવા અને તેના અમલીકરણની પસંદગી કરવા
+          માટે જરૂરી પરવાનગીઓ છે. રાજ્ય સરકારોને BPL દરે અનાજ ઉપલબ્ધ કરાવવામાં
+          આવે છે.
+        </p>
+        <div class="btns my-8">
+          <a
+            href="login"
+            class="py-3 mr-4 inline-block px-3 text-white font-semibold transition bg-green-700 rounded-lg duration-300"
+          >
+            Apply Now
+          </a>
+          <a
+            href="howtoApply"
+            class="py-3 inline-block px-3 text-white font-semibold transition bg-yellow-700 rounded-lg duration-300"
+          >
+            How to Apply
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <div class="bg-[#185490] ">
+      <footer
+        class="p-4  max-w-6xl mx-auto md:px-6 md:py-8 bg-[#185490]"
+      >
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <a href="./index.html" class="flex items-center mb-4 sm:mb-0">
+            <img
+              src="../img-etc/logo.jpg"
+              class="mr-3 h-16"
+              alt="અન્નપૂર્ણા યોજના Logo"
+            />
+            <span
+              class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+              >અન્નપૂર્ણા યોજના</span
+            >
+          </a>
+          <ul
+            class="flex text-white flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"
+          >
+            <li>
+              <a
+                href="#main-sec"
+                class="mr-4 text-white hover:underline md:mr-6"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-white hover:underline">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <hr
+          class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+        />
+        <span class="block text-sm text-white sm:text-center"
+          >© 2022 <a href="#" class="hover:underline">અન્નપૂર્ણા યોજના</a>. All
+          Rights Reserved.
+        </span>
+      </footer>
+    </div>
+
+  </body>
+</html>

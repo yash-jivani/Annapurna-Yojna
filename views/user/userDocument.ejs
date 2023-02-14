@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="./img-etc/logo.jpg" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <title>USerDocument</title>
+  </head>
+  <body style="overflow-x: hidden">
+
+    <!-- Navbar -->
+    <div class="bg-[#185490]">
+      <nav
+        class=" border-gray-200 px-2 sm:px-4 bg-[#185490] py-2.5 max-w-6xl mx-auto"
+      >
+        <div
+          class="container flex flex-wrap items-center justify-between mx-auto"
+        >
+        <a href="index" class="flex items-center mb-4 sm:mb-0">
+          <img
+            src="../img-etc/logo.jpg"
+            class="mr-3 h-16"
+            alt="અન્નપૂર્ણા યોજના Logo"
+          />
+          <span
+            class="self-center text-xl sm:text-2xl font-semibold whitespace-nowrap dark:text-white "
+            >અન્નપૂર્ણા યોજના</span
+          >
+        </a>
+          <button
+            data-collapse-toggle="navbar-default"
+            type="button"
+            class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-default"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul
+              class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-blue"
+            >
+              <li>
+                <a
+                  href="index"
+                  class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent  md:p-0"
+                  aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#main-sec"
+                  class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent  md:p-0"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent  md:p-0"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <main class="pt-14">
+      <h1 class="text-center text-2xl my-7 font-semibold px-2">
+        અન્નપૂર્ણા યોજના સહાય માટેનું અરજી પત્રક
+      </h1>
+      <!-- USER BASIC INFO -->
+
+      <h5
+        class="md:text-lg bg-gray-200 pt-2 text-center font-medium max-w-6xl mx-auto"
+      >
+         Docs.
+      </h5>
+      <form action="/userDocument" method="post" enctype="multipart/form-data">
+        <div
+          class="userInfo border-b py-3 grid grid-cols-2 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="">ચૂંટણી કાર્ડ</h4>
+          <input
+            style="margin-right: auto"
+            type="file"
+            required
+            name="election_card"
+            class="border border-gray-500 rounded"
+          />
+        </div>  
+        <div
+          class="userInfo border-b py-3 grid grid-cols-2 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="">(all)આધાર કાર્ડ</h4>
+          <input
+            style="margin-right: auto"
+            type="file"
+            name="adhar_card" required
+            class="border border-gray-500 rounded"
+          />
+        </div>  
+        <div
+          class="userInfo border-b py-3 grid grid-cols-2 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="">રેશનકાર્ડ</h4>
+          <input
+            style="margin-right: auto"
+            type="file" required
+            name="ration_card" 
+            class="border border-gray-500 rounded"
+          />
+        </div>  
+        <div
+          class="userInfo border-b py-3 grid grid-cols-2 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="">બેંક પાસબુક
+          </h4>
+          <input
+            style="margin-right: auto"
+            type="file" required
+            name="bank_passbook"
+            class="border border-gray-500 rounded"
+          />
+        </div>  
+        <div
+          class="userInfo border-b py-3 grid grid-cols-2 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="">આવકનો દાખલો
+          </h4>
+          <input
+            style="margin-right: auto"
+            type="file" required
+            name="income_certificate"
+            class="border border-gray-500 rounded"
+          />
+        </div>  
+        <div
+          class="userInfo border-b py-3 grid grid-cols-2 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="">જમીન ૮-અ
+          </h4>
+          <input
+            style="margin-right: auto"
+            type="file" required
+            name="land_eight_a_certificate"
+            class="border border-gray-500 rounded"
+          />
+        </div>  
+        <div
+          class="userInfo border-b py-3 grid grid-cols-2 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="">જમીન ના હોય તો મંત્રી નો દાખલો
+          </h4>
+          <input
+            style="margin-right: auto"
+            type="file" required
+            name="mantri_income"
+            class="border border-gray-500 rounded"
+          />
+        </div>  
+        <div
+          class="userInfo border-b py-3 grid grid-cols-2 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="">૬૫+ ઉંમરના પુરાવો
+          </h4>
+          <input
+            style="margin-right: auto"
+            type="file"  required
+            name="prove_sixteen_plus"
+            class="border border-gray-500 rounded"
+          />
+        </div>  
+        <div
+          class="userInfo border-b py-3 grid grid-cols-2 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="">બીમારી હોય તો ડોક્ટર નું સર્ટિફિકેટ સર્ટિફિકેટ
+          </h4>
+          <input
+            style="margin-right: auto"
+            type="file" required
+            name="ill_certificate"
+            class="border border-gray-500 rounded"
+          />
+        </div>  
+        <div class="btns max-w-6xl mx-auto text-center mt-5 mb-10">
+            <button
+              value="Submit"
+              type="submit"
+              class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2"
+            >
+              Submit
+            </button>
+            <button
+              class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2"
+            >
+              Cancel
+            </button>
+          </div>
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <div class="bg-[#185490] ">
+      <footer
+        class="p-4  max-w-6xl mx-auto md:px-6 md:py-8 bg-[#185490]"
+      >
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <a href="index" class="flex items-center mb-4 sm:mb-0">
+            <img
+              src="../img-etc/logo.jpg"
+              class="mr-3 h-16"
+              alt="અન્નપૂર્ણા યોજના Logo"
+            />
+            <span
+              class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+              >અન્નપૂર્ણા યોજના</span
+            >
+          </a>
+          <ul
+            class="flex text-white flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"
+          >
+            <li>
+              <a
+                href="#main-sec"
+                class="mr-4 text-white hover:underline md:mr-6"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-white hover:underline">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <hr
+          class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+        />
+        <span class="block text-sm text-white sm:text-center"
+          >© 2022 <a href="#" class="hover:underline">અન્નપૂર્ણા યોજના</a>. All
+          Rights Reserved.
+        </span>
+      </footer>
+    </div>
+
+
+  </body>
+</html>

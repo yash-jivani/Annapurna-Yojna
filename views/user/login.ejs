@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="./img-etc/logo.jpg" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <title>Login</title>
+  </head>
+  <body>
+  
+    <div class="bg-[#185490]">
+      <nav
+        class=" border-gray-200 px-2 sm:px-4 bg-[#185490] py-2.5 max-w-6xl mx-auto"
+      >
+        <div
+          class="container flex flex-wrap items-center justify-between mx-auto"
+        >
+        <a href="index" class="flex items-center mb-4 sm:mb-0">
+          <img
+            src="../img-etc/logo.jpg"
+            class="mr-3 h-16"
+            alt="અન્નપૂર્ણા યોજના Logo"
+          />
+          <span
+            class="self-center text-xl sm:text-2xl font-semibold whitespace-nowrap dark:text-white "
+            >અન્નપૂર્ણા યોજના</span
+          >
+        </a>
+          <button
+            data-collapse-toggle="navbar-default"
+            type="button"
+            class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-default"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul
+              class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-blue"
+            >
+              <li>
+                <a
+                  href="index"
+                  class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent  md:p-0"
+                  aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#main-sec"
+                  class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent  md:p-0"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent  md:p-0"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <section class="sm:py-1">
+      <div
+        class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0"
+      >
+        
+        <div
+          class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0"
+        >
+        <p class="text-center text-2xl my-5 font-bold">
+          Sign in
+        </p>
+          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <form class="space-y-4 md:space-y-6" action="/login" method="post">
+              
+              <div>
+                <label
+                  for="mobile"
+                  class="block mb-2 text-sm font-medium text-gray-900"
+                  >Mobile No.</label
+                >
+                <input
+                  type="text"
+                  name="mobile"
+                  id="mobile"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Mobile No."
+                  required=""
+                />
+              </div>
+              <div>
+                <label
+                  for="password"
+                  class="block mb-2 text-sm font-medium text-gray-900"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="••••••••"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  required=""
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="w-full text-white bg-green-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              >
+                Submit
+              </button>
+            
+              <p class="text-sm text-[#185490] font-light ">
+                New here?
+                <a
+                  href="register"
+                  class="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                  >Register For Appnapurna Yojna</a
+                >
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="bg-[#185490] ">
+      <footer
+        class="p-4  max-w-6xl mx-auto md:px-6 md:py-8 bg-[#185490]"
+      >
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <a href="./index.html" class="flex items-center mb-4 sm:mb-0">
+            <img
+              src="../img-etc/logo.jpg"
+              class="mr-3 h-16"
+              alt="અન્નપૂર્ણા યોજના Logo"
+            />
+            <span
+              class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+              >અન્નપૂર્ણા યોજના</span
+            >
+          </a>
+          <ul
+            class="flex text-white flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"
+          >
+            <li>
+              <a
+                href="#main-sec"
+                class="mr-4 text-white hover:underline md:mr-6"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-white hover:underline">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <hr
+          class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+        />
+        <span class="block text-sm text-white sm:text-center"
+          >© 2022 <a href="#" class="hover:underline">અન્નપૂર્ણા યોજના</a>. All
+          Rights Reserved.
+        </span>
+      </footer>
+    </div>
+
+  </body>
+</html>

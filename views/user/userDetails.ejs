@@ -1,0 +1,513 @@
+
+    <title>UserDetails</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="./img-etc/logo.jpg" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @media (max-width: 1024px) {
+        .text-resp {
+          width: 100%;
+        }
+      }
+    </style>
+    <title>Form</title>
+  </head>
+  <body style="overflow-x: hidden">
+    <!-- Navbar -->
+    <div class="bg-[#185490]">
+      <nav
+        class="border-gray-200 px-2 sm:px-4 bg-[#185490] py-2.5 max-w-6xl mx-auto"
+      >
+        <div
+          class="container flex flex-wrap items-center justify-between mx-auto"
+        >
+          <a href="index" class="flex items-center mb-4 sm:mb-0">
+            <img
+              src="../img-etc/logo.jpg"
+              class="mr-3 h-16"
+              alt="અન્નપૂર્ણા યોજના Logo"
+            />
+            <span
+              class="self-center text-xl sm:text-2xl font-semibold whitespace-nowrap dark:text-white"
+              >અન્નપૂર્ણા યોજના</span
+            >
+          </a>
+          <button
+            data-collapse-toggle="navbar-default"
+            type="button"
+            class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-default"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul
+              class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-blue"
+            >
+              <li>
+                <a
+                  href="index"
+                  class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                  aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#main-sec"
+                  class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div id="userIdentity"></div>
+
+    <main >
+      <h1 class="text-center text-2xl bg-green-600 text-white font-semibold p-4">
+             Welcome
+        <% if (mobile) { %>
+          <%= mobile %>  
+       <% } %>
+          </h1>
+      <h1 class="text-center text-2xl my-7 font-semibold px-2">
+        અન્નપૂર્ણા યોજના સહાય માટેનું અરજી પત્રક
+      </h1>
+      <!-- USER BASIC INFO -->
+
+      <h5
+        class="md:text-lg bg-gray-200 pt-2 text-center font-medium max-w-6xl mx-auto"
+      >
+        અરજદારની માહિતી
+      </h5>
+      <form action="/userDetails" method="post" onsubmit="return validateForm()">
+        <div
+          class="userInfo border-b place-content-center py-3 grid justify-center sm:grid-cols-2 grid-cols-1 grid-cols-1 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="text-resp">આધાર કાર્ડ નંબર</h4>
+          <input
+            style="margin-right: auto"
+            type="text"
+            maxlength="12"
+            id="adharCardID"
+            name="adharcardNumber"
+
+            class="border border-gray-500 text-resp rounded"
+          />
+          <p class="text-center ml-auto text-red-600" id="adharcardErr"></p>
+        </div>
+        <div
+          class="userInfo border-b py-3 grid sm:grid-cols-2 grid-cols-1 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="text-resp">
+            આધાર કાર્ડ મુજબ અરજદારનું પૂરેપૂરું નામ
+          </h4>
+          <input
+            id="adharNameInput"
+            style="margin-right: auto"
+            type="text"
+            name="userName"
+
+            class="border text-resp rounded border-gray-500"
+          />
+          <p class="text-center ml-auto text-red-600" id="adharNameErr"></p>
+        </div>
+
+        <div
+          class="userInfo border-b py-3 grid sm:grid-cols-2 grid-cols-1 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="text-resp">
+            પરિવાર મા ૧૮+ ઉમર હોય તેવા વ્યકિત ની સંખ્યા
+          </h4>
+          <input
+            style="margin-right: auto"
+            type="number"
+            name="eighteenPlusMember"
+
+            min="0"
+            max="10"
+            id="member18plus"
+            class="border border-gray-500 text-resp rounded"
+          />
+          <p class="text-center ml-auto text-red-600" id="eighteenErr"></p>
+        </div>
+
+        <div
+          class="userInfo border-b py-3 grid sm:grid-cols-2 grid-cols-1 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="text-resp">રેશન કાર્ડ નંબર.</h4>
+          <input
+            style="margin-right: auto"
+            type="text"
+            id="rationCardInput"
+            name="rationCardNumber"
+
+            maxlength="15"
+            class="border border-gray-500 text-resp rounded"
+          />
+          <p class="text-center ml-auto text-red-600" id="rationErr"></p>
+        </div>
+
+        <div
+          class="userInfo border-b py-3 grid sm:grid-cols-2 grid-cols-1 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="text-resp">પરિવારમાં કુલ સભ્ય સંખ્યા</h4>
+          <input
+            style="margin-right: auto"
+            type="number"
+            name="totalMember"
+
+            min="0"
+            max="10"
+            class="border border-gray-500 text-resp rounded"
+          />
+          <p class="text-center ml-auto text-red-600" id="janSyamkhyaErr"></p>
+        </div>
+
+        <div
+          class="userInfo border-b py-3 grid sm:grid-cols-2 grid-cols-1 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="text-resp">
+            કોઈ પણ સરકારી કર્મ ચારી છે?
+          </h4>
+          <select class="text-resp" style="margin-right: auto"  name="govermentJob"
+          id="">
+            <option value="yes">હા</option>
+            <option value="no">ના</option>
+          </select>
+        </div>
+
+        <div
+          class="userInfo border-b py-3 grid sm:grid-cols-2 grid-cols-1 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="text-resp">
+            10 હજાર થી ઉપર કોઈ ને વાર્ષિક આવક છે?
+          </h4>
+          <select class="text-resp" style="margin-right: auto" name="ann_inc_Morethan_tenK"
+          id="">
+            <option value="yes">હા</option>
+            <option value="no">ના</option>
+          </select>
+        </div>
+
+        <div
+          class="userInfo border-b py-3 grid sm:grid-cols-2 grid-cols-1 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="text-resp">
+            કોઈ પણ આવાક વેરો ભરે છે?
+          </h4>
+          <select class="text-resp" style="margin-right: auto" name="incomeTax"
+          id="">
+            <option value="yes">હા</option>
+            <option value="no">ના</option>
+          </select>
+        </div>
+
+
+        <div
+          class="userInfo border-b py-3 grid sm:grid-cols-2 grid-cols-1 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="text-resp">ખેતીમાં જમીન છે?</h4>
+          <select class="text-resp" style="margin-right: auto" name="abt_land" id="">
+            <option value="yes">હા</option>
+            <option value="no">ના</option>
+          </select>
+        </div>
+
+        <div
+          class="userInfo border-b py-3 grid sm:grid-cols-2 grid-cols-1 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="text-resp">
+            જો હા તો આઠ એ રજૂ કરો
+          </h4>
+        </div>
+
+        <div
+          class="userInfo border-b py-3 grid sm:grid-cols-2 grid-cols-1 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="text-resp">
+            પુખ્ત વયના તમામ સભ્યો અશક્ત છે?
+          </h4>
+          <select class="text-resp" style="margin-right: auto" name="is_impaired" id="">
+            <option value="yes">હા</option>
+            <option value="no">ના</option>
+          </select>
+        </div>
+
+        <div
+          class="userInfo border-b py-3 grid sm:grid-cols-2 grid-cols-1 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="text-resp">
+            તમામ સભ્યોને ગંભીર બીમારી છે?
+          </h4>
+          <select class="text-resp" style="margin-right: auto"  name="is_bimari" id="">
+            <option value="yes">હા</option>
+            <option value="no">ના</option>
+          </select>
+        </div>
+        <div
+          class="userInfo border-b py-3 grid sm:grid-cols-2 grid-cols-1 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="text-resp">વ્યવસાય</h4>
+          <input
+            style="margin-right: auto"
+            type="text"
+            name="occupation"
+
+            id="occupationInput"
+            class="border border-gray-500 text-resp rounded"
+          />
+          <p class="text-center ml-auto text-red-600" id="occupationErr"></p>
+        </div>
+
+        <div
+          class="userInfo border-b py-3 grid sm:grid-cols-2 grid-cols-1 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="text-resp">
+            આવક પ્રમાણપત્ર નં.
+          </h4>
+          <input
+            style="margin-right: auto"
+            type="text"
+            id="incomeNumInput"
+            minlength="0"
+            name="income_certificate_number"
+
+            maxlength="10"
+            class="border border-gray-500 text-resp rounded"
+          />
+          <p class="text-center ml-auto text-red-600" id="incomeErr"></p>
+        </div>
+
+        <!-- USER CONTECT -->
+        <h5
+          class="md:text-lg bg-gray-200 pt-2 text-center font-medium max-w-6xl mx-auto"
+        >
+          સંપર્ક માટે ની માહિતી
+        </h5>
+        <div
+          class="userInfo border-b py-3 grid sm:grid-cols-2 grid-cols-1 max-w-6xl place-items-center mx-auto gap-4 px-3 text-xs md:text-base"
+        >
+          <h4 style="margin-left: auto" class="text-resp">અરજદાર નો મોબાઈલ નંબર
+          </h4>
+
+          <input
+            id="phoneNum"
+            style="margin-right: auto"
+            class="border border-gray-500 text-resp rounded"
+            name="mobile"
+            size="20"
+            type="text"
+            maxlength="10"
+          />
+          <p class="text-center ml-auto text-red-600" id="phoneErr"></p>
+        </div>
+  
+        <div class="btns max-w-6xl mx-auto text-center mt-5 mb-10">
+          <button
+            value="Submit"
+            type="submit"
+            class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2"
+          >
+            Submit
+          </button>
+          <button
+            class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <div class="bg-[#185490]">
+      <footer class="p-4 max-w-6xl mx-auto md:px-6 md:py-8 bg-[#185490]">
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <a href="./index.html" class="flex items-center mb-4 sm:mb-0">
+            <img
+              src="./img-etc/logo.jpg"
+              class="mr-3 h-16"
+              alt="અન્નપૂર્ણા યોજના Logo"
+            />
+            <span
+              class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+              >અન્નપૂર્ણા યોજના</span
+            >
+          </a>
+          <ul
+            class="flex text-white flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"
+          >
+            <li>
+              <a
+                href="#main-sec"
+                class="mr-4 text-white hover:underline md:mr-6"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-white hover:underline">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <hr
+          class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+        />
+        <span class="block text-sm text-white sm:text-center"
+          >© 2022 <a href="#" class="hover:underline">અન્નપૂર્ણા યોજના</a>. All
+          Rights Reserved.
+        </span>
+      </footer>
+    </div>
+
+    <script>
+      function showErrMsg(errEle, msg) {
+        errEle.textContent = msg;
+      }
+
+      function validateAdharNumber(number) {
+        const errEle = document.getElementById("adharcardErr");
+        if (isNaN(+number) || number.length < 12) {
+          showErrMsg(errEle, "Invalid Adhar-Number");
+          return false;
+        } else {
+          showErrMsg(errEle, "");
+          return true;
+        }
+      }
+
+      function validateRationCard(cardNumber) {
+        const errEle = document.getElementById("rationErr");
+        if (cardNumber.length === 0 || cardNumber.length > 15) {
+          showErrMsg(errEle, "invalid ration card number");
+          return false;
+        } else {
+          showErrMsg(errEle, "");
+          return true;
+        }
+      }
+
+      function validateAdharName(adharName) {
+        const errEle = document.getElementById("adharNameErr");
+        if (!isNaN(adharName) || adharName.value == "") {
+          showErrMsg(errEle, "invalid name");
+          return false;
+        } else {
+          showErrMsg(errEle, "");
+          return true;
+        }
+      }
+
+      function validateTotalMember(members) {
+        const errEle = document.getElementById("eighteenErr");
+        if (members > 10) {
+          showErrMsg(errEle, "Max limit: 10");
+          return false;
+        } else {
+          showErrMsg(errEle, "");
+          return true;
+        }
+      }
+
+      function validateOccupation(occupation) {
+        const errEle = document.getElementById("occupationErr");
+        if (!isNaN(occupation) || occupation == "") {
+          showErrMsg(errEle, "Enter valid occupation");
+          return false;
+        } else {
+          showErrMsg(errEle, "");
+          return true;
+        }
+      }
+
+      function validateIncomeCertiNumber(incomeNumber) {
+        const errEle = document.getElementById("incomeErr");
+        if (incomeNumber === "" || incomeNumber.length !== 10) {
+          showErrMsg(errEle, "Enter valid income certificate number");
+          return false;
+        } else {
+          showErrMsg(errEle, "");
+          return true;
+        }
+      }
+
+      function validatePhoneNumber(phoneNumber) {
+        const errEle = document.getElementById("phoneErr");
+        if (
+          phoneNumber === "" ||
+          phoneNumber === undefined ||
+          phoneNumber.length != 10 ||
+          isNaN(phoneNumber)
+        ) {
+          showErrMsg(errEle, "Enter valid phone number");
+          return false;
+        } else {
+          showErrMsg(errEle, "");
+          return true;
+        }
+      }
+
+      function validateForm() {
+        // inputvalues
+        const adharNumber = document.getElementById("adharCardID").value;
+        const adharName = document.getElementById("adharNameInput");
+        const member18Plus = document.getElementById("member18plus").value;
+        const occupation = document.getElementById("occupationInput").value;
+        const incomeNum = document.getElementById("incomeNumInput").value;
+        const phoneNumber = document.getElementById("phoneNum").value;
+        const rationCard = document.getElementById("rationCardInput").value;
+
+        // variables
+        const isAdharNumValid = validateAdharNumber(adharNumber);
+        const isAdharNameValid = validateAdharName(adharName);
+        const is18plusValid = validateTotalMember(member18Plus);
+        const isOccupationValid = validateOccupation(occupation);
+        const isRationCardValid = validateRationCard(rationCard);
+        const isIncomeNoValid = validateIncomeCertiNumber(incomeNum);
+        const isPhoneNoValid = validatePhoneNumber(phoneNumber);
+        if (
+          isAdharNumValid &&
+          isAdharNameValid &&
+          is18plusValid &&
+          isOccupationValid &&
+          // isIncomeNoValid &&
+          isRationCardValid &&
+          isPhoneNoValid
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
